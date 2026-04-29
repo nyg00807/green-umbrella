@@ -1,0 +1,48 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+h1, h2, h3, h4{
+  font-family: 'SpoqaHanSans';
+  line-height: 106px;
+  letter-spacing: -6px;
+}
+
+.head h2{
+  font-family: "Noto Sans KR", sans-serif;
+  letter-spacing: -0.5px;
+}
+
+/* reset */
+*{
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, form, fieldset, input, select, label, textarea, button, table, caption, thead, tfoot, tbody, tr, th, td {
+  margin: 0;
+  padding: 0;
+  outline: none
+}
+
+html, body {
+  height: 100%
+}
+
+a {
+  color: #333 ;
+  text-decoration: none
+}
+
+ol, ul {
+  list-style: none
+}
+
+/* 변수 */
+:root{
+  --renew-point-color: #005b48;
+}
+
