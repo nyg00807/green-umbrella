@@ -2,6 +2,16 @@
   const header = document.getElementById("header");
   const lnb = document.querySelectorAll(".lnb");
 
+  //스크롤 이벤트
+  window.addEventListener("scroll", function () {
+  if (window.scrollY > 0) {
+    header.classList.add("scroll");
+    header.classList.remove("white-mode");  
+  } else {
+    header.classList.remove("scroll");
+  }
+});
+
   //모든 메뉴 닫기
   const closeAllMenus = function(){
     lnb.forEach((item) => {
@@ -54,7 +64,7 @@ btnClose.addEventListener('click', ()=>{
 
   const whiteSlides = [0, 5, 6]; // 0부터 시작
 
-  const mainSwiper = new Swiper("#mainSwiper", {
+  let mainSwiper = new Swiper("#mainSwiper", {
     loop: true,
     navigation: {
       nextEl: ".main-swiper-next",
@@ -78,6 +88,11 @@ btnClose.addEventListener('click', ()=>{
   });
 
   function updateHeaderTheme(index) {
+    if (window.scrollY > 0) {
+    header.classList.remove("white-mode");
+    return;
+  }
+
     if (whiteSlides.includes(index)) {
       header.classList.add("white-mode");
     } else {
@@ -285,5 +300,23 @@ noticeTabs.forEach((tab) => {
     if (targetContent) {
       targetContent.classList.add("active");
     }
+  });
+});
+
+/* go to top */
+const gotoTop = document.querySelector(".gotoTop");
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 200) {
+    gotoTop.classList.add("on");
+  } else {
+    gotoTop.classList.remove("on");
+  }
+});
+
+gotoTop.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
 });
